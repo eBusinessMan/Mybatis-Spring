@@ -22,33 +22,29 @@
  * THE SOFTWARE.
  */
 
-package com.isea533.mybatis.test;
-
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.isea533.mybatis.mapper.CountryMapper;
-import com.isea533.mybatis.model.Country;
-import org.apache.ibatis.session.SqlSession;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import tk.mybatis.mapper.entity.Example;
+package com.whtr.strategy.drools.test;
 
 import java.util.List;
 
-/**
- * Created by liuzh on 2015/3/7.
- */
-public class PageMapperTest extends BasicTest {
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
-//    @Autowired
-//    private CountryMapper countryMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.whtr.strategy.drools.dao.CountryMapper;
+import com.whtr.strategy.drools.model.Country;
+
+import tk.mybatis.mapper.entity.Example;
+
+public class PageMapperTest extends BasicTest {
 
     @Autowired
     private SqlSession sqlSession;
 
     @Test
     public void test(){
-        CountryMapper countryMapper = sqlSession.getMapper(CountryMapper.class);
+    	CountryMapper countryMapper = sqlSession.getMapper(CountryMapper.class);
         Example example = new Example(Country.class);
         example.createCriteria().andGreaterThan("id",100);
         PageHelper.startPage(2,10);

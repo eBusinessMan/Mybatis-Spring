@@ -22,11 +22,10 @@
  * THE SOFTWARE.
  */
 
-package com.isea533.mybatis.mapper;
+package com.whtr.strategy.drools.dao;
 
-import com.isea533.mybatis.model.Country;
-import com.isea533.mybatis.util.MyMapper;
+import com.whtr.strategy.drools.model.Country;
 
-public interface CountryMapper extends MyMapper<Country> {
+public interface CountryMapper extends com.whtr.strategy.common.dao.BaseMapper<Country> {
 
 }
